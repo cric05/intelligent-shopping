@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Backend API URL ---
     // Make sure your backend server is running on this port
     // Update this line in your VS Code:
-const API_URL = 'http://127.0.0.1:5000/api/auth';
+const API_URL = 'https://intelligent-shopping.onrender.com/api/auth';
 
 
     
