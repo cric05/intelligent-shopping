@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About PricePulse | AI-Powered Shopping Intelligence</title>
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4d44db;
+            --accent: #ff6584;
+            --dark: #2d3748;
+            --light: #f7fafc;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: url('https://example.com/ai-shopping-bg.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .mission-section, .features-section, .how-it-works {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .tech-item {
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .team-section {
+            text-align: center;
+        }
+    </style>
+
+    <script src="js/protect.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+        <!-- Animated Background -->
+    <div class="bg-animation">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <!-- Navigation Bar with Profile Menu -->
+    <nav>
+      <input type="checkbox" id="nav-toggle" />
+      <div class="logo">
+        <i class="fas fa-robot"></i><strong>PricePulse</strong>
+      </div>
+      <ul class="links">
+        <li id="home"><a href="index.html">Home</a></li>
+        <li id="about"><a href="about.html">About</a></li>
+        <li id="contact"><a href="contact.html">Contact</a></li>
+        
+        <!-- AUTH LINKS START -->
+        <li id="authLink"><a href="auth.html">Login / Register</a></li>
+        
+        <!-- Profile Menu (Initially Hidden) -->
+          <li class="profile-menu" id="profileMenu" style="display: none;">
+      <button class="profile-btn" id="profileBtn">
+        <i class="fas fa-user"></i>
+      </button>
+      <div class="profile-dropdown" id="profileDropdown">
+        
+        <!-- NEW: User Info Header -->
+        <div class="dropdown-header">
+          <p class="dropdown-name" id="dropdownUserName">User Name</p>
+          <p class="dropdown-email" id="dropdownUserEmail">user@example.com</p>
+        </div>
+        
+        <!-- Logout Link -->
+        <a href="#" class="logout-link" id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+
+      </div>
+    </li>
+        <!-- AUTH LINKS END -->
+        
+      </ul>
+      <label for="nav-toggle" class="icon-burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </label>
+    </nav>
+
+    <div class="about-container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>About PricePulse</h1>
+                <p class="tagline">Your AI-powered shopping intelligence platform</p>
+            </div>
+        </section>
+        
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>At PricePulse, we're revolutionizing online shopping by harnessing artificial intelligence to bring you real-time price comparisons, product insights, and smart recommendations across major retailers including Amazon, Walmart, and eBay.</p>
+            <p>We believe in transparent, intelligent shopping that saves you both time and money while ensuring you get exactly what you're looking for.</p>
+            <p>The mission of Intelligent Online Shopping is to transform the online shopping experience by offering a smart and centralized platform 
+                that simplifies product discovery and comparison. With countless products spread across multiple e-commerce platforms, it can be 
+                overwhelming for users to find the best deal. Our platform addresses this challenge by allowing users to search for products and 
+                instantly view results from Amazon, Walmart, and eBay—all in one place.</p>
+            <p>We aim to make online shopping more efficient by enabling users to compare prices, ratings, and discounts in real-time. 
+                    By integrating secure APIs from major e-commerce sites, we ensure that the information presented is accurate, reliable, 
+                    and up-to-date. Users can conveniently browse options and then proceed directly to the product page of their chosen platform 
+                    to complete the purchase.</p>
+            <p>Our website is built using modern technologies like React.js for the frontend and Node.js with Express.js for the backend. The interface 
+                is designed to be fast, responsive, and easy to use, ensuring a smooth shopping experience across devices. We are committed to providing 
+                a user-friendly environment where shoppers can quickly find what they need without switching between multiple tabs or apps.</p>
+            <p>At its core, this project is driven by a passion for innovation, simplicity, and user satisfaction. Our long-term goal is to become a 
+                trusted platform for intelligent shopping decisions by continuously improving performance, expanding platform support, and adapting 
+                to the evolving needs of online consumers.</p>    
+        </section>
+        
+        <section class="features-section">
+            <h2>Why Choose PricePulse?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Intelligence</h3>
+                    <p>Our advanced algorithms analyze millions of products to find you the best deals based on price history, reviews, and quality metrics.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Real Price Tracking</h3>
+                    <p>Track price fluctuations across multiple retailers and get alerts when prices drop on your watched items.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Smart Recommendations</h3>
+                    <p>Get personalized product suggestions based on your browsing history and shopping preferences.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="how-it-works">
+            <h2>How PricePulse Works</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>1. Intelligent Search</h3>
+                    <p>Search for any product and instantly see results from multiple retailers with accurate pricing and availability.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>2. Comprehensive Comparison</h3>
+                    <p>Compare prices, ratings, shipping costs, and seller reputations all in one place.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>3. Smart Decision Making</h3>
+                    <p>Our AI scores each option based on value, quality, and reliability to recommend the best choice.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mission-section">
+            <h2>Our Technology</h2>
+            <p>PricePulse leverages cutting-edge technologies to deliver seamless shopping intelligence:</p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fab fa-react"></i>
+                    <span>React.js</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-node-js"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-brain"></i>
+                    <span>Machine Learning</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-cloud"></i>
+                    <span>Cloud Computing</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>Big Data</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <h2>Meet The Team</h2>
+            <p>PricePulse was created by a passionate team of developers, data scientists, and shopping enthusiasts committed to transforming your online shopping experience.</p>
+        </section>
+    </div>
+</body>
+</html>
