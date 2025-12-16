@@ -34,3 +34,15 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server is running on port ${PORT}`);
 });
+// --- KEEP ALIVE HEARTBEAT ---
+// This forces the server to talk to the database every 5 minutes.
+// This prevents Aiven from thinking the database is idle and turning it off.
+setInterval(async () => {
+    try {
+        // Run a simple query (SELECT 1) just to wake up the DB
+        await sequelize.query('SELECT 1'); 
+        console.log('💓 Database Heartbeat sent (Keep-Alive)');
+    } catch (error) {
+        console.error('❌ Heartbeat failed:', error.message);
+    }
+}, 5 * 60 * 1000); // Run every 5 minutes
