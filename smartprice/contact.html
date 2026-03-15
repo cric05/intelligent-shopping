@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PricePulse</title>
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --primary-dark: #4d44db;
+            --accent: #ff6584;
+            --dark: #2d3748;
+            --light: #f7fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-header p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+
+    <script src="js/protect.js" defer></script>
+    <script src="js/nav.js" defer></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+        <!-- Animated Background -->
+    <div class="bg-animation">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <!-- Navigation Bar with Profile Menu -->
+    <nav>
+      <input type="checkbox" id="nav-toggle" />
+      <div class="logo">
+        <i class="fas fa-robot"></i><strong>PricePulse</strong>
+      </div>
+      <ul class="links">
+        <li id="home"><a href="index.html">Home</a></li>
+        <li id="about"><a href="about.html">About</a></li>
+        <li id="contact"><a href="contact.html">Contact</a></li>
+        
+        <!-- AUTH LINKS START -->
+        <li id="authLink"><a href="auth.html">Login / Register</a></li>
+        
+        <!-- Profile Menu (Initially Hidden) -->
+          <li class="profile-menu" id="profileMenu" style="display: none;">
+      <button class="profile-btn" id="profileBtn">
+        <i class="fas fa-user"></i>
+      </button>
+      <div class="profile-dropdown" id="profileDropdown">
+        
+        <!-- NEW: User Info Header -->
+        <div class="dropdown-header">
+          <p class="dropdown-name" id="dropdownUserName">User Name</p>
+          <p class="dropdown-email" id="dropdownUserEmail">user@example.com</p>
+        </div>
+        
+        <!-- Logout Link -->
+        <a href="#" class="logout-link" id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+
+      </div>
+    </li>
+        <!-- AUTH LINKS END -->
+        
+      </ul>
+      <label for="nav-toggle" class="icon-burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </label>
+    </nav>
+
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Get in Touch</h1>
+            <p>Have questions about PricePulse? Want to provide feedback? We'd love to hear from you!</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p>+91 123456780</p>
+                <p>Mon-Fri: 9AM - 5PM PST</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p>support@pricepulse.com</p>
+                <p>Response within 24 hours</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Visit Us</h3>
+                <p>K.S.R. College of Engineering</p>
+                <p>Tiruchengode, Namakkal</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
