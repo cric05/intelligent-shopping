@@ -66,7 +66,7 @@ async function saveSearchHistory(query) {
     const userInfo = JSON.parse(localStorage.getItem('pricePulseUser'));
     if (!userInfo || !userInfo.token) return;
     try {
-        await fetch('http://localhost:5000/api/history', {
+        await fetch('https://smart-shopping-kzgb.onrender.com/api/history', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${userInfo.token}` },
             body: JSON.stringify({ query })
@@ -81,7 +81,7 @@ async function fetchAndDisplayHistory() {
     const userInfo = JSON.parse(localStorage.getItem('pricePulseUser'));
     if (!userInfo || !userInfo.token) return;
     try {
-        const res = await fetch('http://localhost:5000/api/history', {
+        const res = await fetch('https://smart-shopping-kzgb.onrender.com/api/history', {
             headers: { 'Authorization': `Bearer ${userInfo.token}` }
         });
         if (!res.ok) return;
@@ -143,7 +143,7 @@ async function performSearch(page = 1, saveHistory = true) {
     loadingIndicator.style.display = "flex";
 
     try {
-        const res = await fetch(`http://localhost:5000/api/products/compare?product=${encodeURIComponent(query)}&page=${page}`);
+        const res = await fetch(`https://smart-shopping-kzgb.onrender.com/api/products/compare?product=${encodeURIComponent(query)}&page=${page}`);
         const data = await res.json();
         const { amazon, walmart, ebay } = data;
         let product = [
