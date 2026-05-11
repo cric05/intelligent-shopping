@@ -3,7 +3,7 @@ module.exports = {
   // --- SCRAPERAPI CONFIGURATION (The primary source now) ---
   SCRAPER_API: {
     host: "api.scraperapi.com",
-    key: "574829aa038fa877ec9d12ca283007dc", // <-- REPLACE WITH YOUR ACTUAL KEY
+    key: "bb96fdc0a5e058a6ceebce1fc63d46fe", // <-- REPLACE WITH YOUR ACTUAL KEY
   },
 
   // NOTE: All previous RapidAPI keys for AMAZON, FLIPKART, EBAY, and WALMART
